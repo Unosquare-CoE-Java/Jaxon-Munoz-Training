@@ -1,2 +1,2 @@
-# MyCryptoApp
-Java project with Maven, MongoDB Atlas, Unit and Integration test with JUnit and more
+# Registration Service
+Java project with Spring, Maven, MongoDB Atlas, JUnit, Lombok, Docker and more
