@@ -20,13 +20,12 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class UserService {
 
     private static final String FAILED_TO_ADD_USER = "Failed to add user";
     private static final String EMPTY_EMAIL_EXCEPTION = "Email is required";
-
+    @Autowired
     private UserRepository userRepository;
 
     public Optional<User> getUserByEmail(final String email) {
