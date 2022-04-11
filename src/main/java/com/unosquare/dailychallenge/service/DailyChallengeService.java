@@ -41,6 +41,26 @@ public class DailyChallengeService {
             return "The given string is not a palindrome";
     }
 
+    /** Finding the longest common prefix: Write a program that finds the longest common prefix of given strings.*/
+    /**
+     * This is a personal implementation cause we can use apache commons: StringUtils.getCommonPrefix(test.split(","));
+     */
+    public String getCommonPrefix(String test) {
+        if(StringUtils.isEmpty(test) || test.split(",").length==0)
+            return STRING_REQUIRED;
+        String[] t= test.split(",");
+        String prefix = t[0];
+        
+        for (int i = 1; i < t.length; i++) {
+            while (t[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (StringUtils.isEmpty(prefix))
+                    return "";
+            }
+        }
+        return prefix;
+    }
+
     private String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD)
                          .replaceAll("[^\\p{ASCII}]", "");

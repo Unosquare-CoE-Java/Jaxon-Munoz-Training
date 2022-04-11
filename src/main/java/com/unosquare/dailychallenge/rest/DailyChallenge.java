@@ -29,4 +29,9 @@ public class DailyChallenge {
     public ResponseEntity<ResponseDTO<String>> getIsPalindrome(@PathVariable("test") @Valid final String test) {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.isPalindrome(test)),HttpStatus.OK);
     }
+
+    @GetMapping("3/{test}")
+    public ResponseEntity<ResponseDTO<String>> getCommonPrefix(@PathVariable("test") @Valid final String test) {
+        return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.getCommonPrefix(test)),HttpStatus.OK);
+    }
 }
