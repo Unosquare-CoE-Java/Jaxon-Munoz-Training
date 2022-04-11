@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.Normalizer;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -49,8 +50,9 @@ public class DailyChallengeService {
         if(StringUtils.isEmpty(test) || test.split(",").length==0)
             return STRING_REQUIRED;
         String[] t= test.split(",");
+        Arrays.sort(t, Comparator.comparingInt(String::length));
         String prefix = t[0];
-        
+
         for (int i = 1; i < t.length; i++) {
             while (t[i].indexOf(prefix) != 0) {
                 prefix = prefix.substring(0, prefix.length() - 1);
@@ -58,7 +60,7 @@ public class DailyChallengeService {
                     return "";
             }
         }
-        return prefix;
+        return StringUtils.isEmpty(prefix)?"There is not common prefix":String.format("The longest common prefix is: %s",prefix);
     }
 
     private String unaccent(String src) {
