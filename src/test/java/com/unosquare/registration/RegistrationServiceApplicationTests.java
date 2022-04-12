@@ -1,4 +1,4 @@
-package com.unosquare.mycryptoapp;
+package com.unosquare.registration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

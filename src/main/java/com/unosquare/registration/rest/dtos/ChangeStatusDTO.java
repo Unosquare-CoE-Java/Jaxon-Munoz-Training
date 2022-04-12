@@ -1,6 +1,5 @@
-package com.unosquare.mycryptoapp.rest.dtos;
+package com.unosquare.registration.rest.dtos;
 
-import com.unosquare.mycryptoapp.domain.enums.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,8 +1,8 @@
-package com.unosquare.mycryptoapp.service.util;
+package com.unosquare.registration.service.util;
 
-import com.unosquare.mycryptoapp.domain.User;
-import com.unosquare.mycryptoapp.domain.enums.Status;
-import com.unosquare.mycryptoapp.rest.dtos.ResponseDTO;
+import com.unosquare.registration.domain.User;
+import com.unosquare.registration.domain.enums.Status;
+import com.unosquare.registration.rest.dtos.ResponseDTO;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
 

@@ -1,11 +1,10 @@
-package com.unosquare.mycryptoapp.rest;
+package com.unosquare.registration.rest;
 
-import com.unosquare.mycryptoapp.domain.User;
-import com.unosquare.mycryptoapp.rest.dtos.ChangePasswordDTO;
-import com.unosquare.mycryptoapp.rest.dtos.ChangeStatusDTO;
-import com.unosquare.mycryptoapp.rest.dtos.ResponseDTO;
-import com.unosquare.mycryptoapp.service.UserService;
-import lombok.RequiredArgsConstructor;
+import com.unosquare.registration.domain.User;
+import com.unosquare.registration.rest.dtos.ChangePasswordDTO;
+import com.unosquare.registration.rest.dtos.ChangeStatusDTO;
+import com.unosquare.registration.rest.dtos.ResponseDTO;
+import com.unosquare.registration.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

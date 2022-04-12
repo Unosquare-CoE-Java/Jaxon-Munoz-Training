@@ -1,6 +1,6 @@
-package com.unosquare.mycryptoapp.repository;
+package com.unosquare.registration.repository;
 
-import com.unosquare.mycryptoapp.domain.User;
+import com.unosquare.registration.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

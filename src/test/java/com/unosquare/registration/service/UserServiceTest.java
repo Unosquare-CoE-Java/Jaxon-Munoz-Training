@@ -1,14 +1,12 @@
-package com.unosquare.mycryptoapp.service;
+package com.unosquare.registration.service;
 
-import com.unosquare.mycryptoapp.domain.User;
-import com.unosquare.mycryptoapp.repository.UserRepository;
-import com.unosquare.mycryptoapp.rest.dtos.ResponseDTO;
-import org.apache.commons.lang3.StringUtils;
+import com.unosquare.registration.domain.User;
+import com.unosquare.registration.repository.UserRepository;
+import com.unosquare.registration.rest.dtos.ResponseDTO;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
