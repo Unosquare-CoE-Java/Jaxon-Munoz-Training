@@ -9,6 +9,7 @@ import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -61,6 +62,15 @@ public class DailyChallengeService {
             }
         }
         return StringUtils.isEmpty(prefix)?"There is not common prefix":String.format("The longest common prefix is: %s",prefix);
+    }
+
+    /**
+     * Removing duplicate characters: Write a program that removes the duplicate characters from the given string.
+     */
+    public String removeDuplicates(String test) {
+        if(StringUtils.isEmpty(test))
+            return STRING_REQUIRED;
+        return Arrays.stream(test.split(" ")).distinct().collect(Collectors.joining());
     }
 
     private String unaccent(String src) {

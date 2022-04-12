@@ -34,4 +34,9 @@ public class DailyChallenge {
     public ResponseEntity<ResponseDTO<String>> getCommonPrefix(@PathVariable("test") @Valid final String test) {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.getCommonPrefix(test)),HttpStatus.OK);
     }
+
+    @GetMapping("4/{test}")
+    public ResponseEntity<ResponseDTO<String>> getWithoutDuplicates(@PathVariable("test") @Valid final String test) {
+        return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.removeDuplicates(test)),HttpStatus.OK);
+    }
 }
