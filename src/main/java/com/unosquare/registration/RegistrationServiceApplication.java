@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@ComponentScan({"com.unosquare.dailychallenge", "com.unosquare.registration"})
+@ComponentScan({"com.unosquare.dailychallenge", "com.unosquare.registration", "com.unosquare.operation"})
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableMongoRepositories
 public class RegistrationServiceApplication {

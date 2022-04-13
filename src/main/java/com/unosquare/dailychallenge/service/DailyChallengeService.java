@@ -9,6 +9,7 @@ import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,6 +73,23 @@ public class DailyChallengeService {
             return STRING_REQUIRED;
         return Arrays.stream(test.split(" ")).distinct().collect(Collectors.joining());
     }
+
+    /**
+     * Finding the character with the most appearances: Write a program that finds the character with the most appearances in the given string.
+     */
+    public String mostAppearances(String test) {
+        if(StringUtils.isEmpty(test))
+            return STRING_REQUIRED;
+        Character r =  test.chars()
+                .mapToObj(x -> (char) x)
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .get().getKey();
+
+        return String.format("The most appearance character is %s",r);
+    }
+
 
     private String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD)
