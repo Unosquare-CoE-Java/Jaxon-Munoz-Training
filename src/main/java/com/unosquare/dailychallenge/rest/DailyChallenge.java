@@ -38,4 +38,9 @@ public class DailyChallenge {
     public ResponseEntity<ResponseDTO<String>> getWithoutDuplicates(@PathVariable("test") @Valid final String test) {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.removeDuplicates(test)),HttpStatus.OK);
     }
+
+    @GetMapping("5/{test}")
+    public ResponseEntity<ResponseDTO<String>> getMostAppearances(@PathVariable("test") @Valid final String test) {
+        return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.mostAppearances(test)),HttpStatus.OK);
+    }
 }
