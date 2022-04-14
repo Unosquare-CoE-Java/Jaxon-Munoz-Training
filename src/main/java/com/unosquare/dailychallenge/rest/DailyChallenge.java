@@ -43,4 +43,10 @@ public class DailyChallenge {
     public ResponseEntity<ResponseDTO<String>> getMostAppearances(@PathVariable("test") @Valid final String test) {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.mostAppearances(test)),HttpStatus.OK);
     }
+
+    @GetMapping("6/{test}")
+    public ResponseEntity<ResponseDTO<String>> getWithoutNulls(@PathVariable("test") @Valid final String test) {
+        return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.checkinNullReferences(test)),HttpStatus.OK);
+    }
+
 }

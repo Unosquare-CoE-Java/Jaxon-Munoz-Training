@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.Normalizer;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -88,6 +85,20 @@ public class DailyChallengeService {
                 .get().getKey();
 
         return String.format("The most appearance character is %s",r);
+    }
+
+    /**
+     * Checking null references in a functional style and imperative code:
+     * Write a program that performs the null checks on the given references
+     * in a functional style and imperative code.
+     */
+    public String checkinNullReferences(String test) {
+
+        if(StringUtils.isEmpty(test))
+            return STRING_REQUIRED;
+        return String.format("The new list without nulls is: %s",
+                Arrays.stream(test.split(",")).filter(Objects::nonNull)
+                      .collect(Collectors.joining(",")));
     }
 
 
