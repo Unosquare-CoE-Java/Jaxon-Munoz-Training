@@ -49,4 +49,8 @@ public class DailyChallenge {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.checkinNullReferences(test)),HttpStatus.OK);
     }
 
+    @GetMapping("7/{test}")
+    public ResponseEntity<ResponseDTO<String>> getAlertOfNullPointer(@PathVariable("test") @Valid final String test) {
+        return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.checkinNullPointer(test)),HttpStatus.OK);
+    }
 }

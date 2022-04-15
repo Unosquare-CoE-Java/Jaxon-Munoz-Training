@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.Normalizer;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 @Service
@@ -101,8 +102,33 @@ public class DailyChallengeService {
                       .collect(Collectors.joining(",")));
     }
 
+    /**
+     * Checking null references and throwing a customized NullPointerException error:
+     * Write a program that performs the null checks on the given references and
+     * throws NullPointerException with custom messages.
+     */
+    public String checkinNullPointer(String test) {
 
-    private String unaccent(String src) {
+        AtomicReference<Boolean> containNull = new AtomicReference<>();
+        containNull.set(Boolean.FALSE);
+        if(StringUtils.isEmpty(test))
+            return STRING_REQUIRED;
+
+        Arrays.stream(test.split(",")).forEach(i->
+            {
+                try {
+                    System.out.println(String.format("Iterating over value %",i.toString()));
+                }catch (NullPointerException npe){
+                    containNull.set(Boolean.TRUE);
+                }
+            });
+        return Boolean.TRUE.equals(containNull.get())
+                ?"There is not null elements":"Null elements found";
+    }
+
+
+
+        private String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD)
                          .replaceAll("[^\\p{ASCII}]", "");
     }
