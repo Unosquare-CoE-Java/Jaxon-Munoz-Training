@@ -127,6 +127,29 @@ public class DailyChallengeService {
     }
 
 
+    /**
+     *  Checking null references and throwing the specified exception
+     *  (example, IllegalArgumentException): Write a program that performs
+     *  the null checks on the given references and throws the specified exception.
+     */
+    public String checkinNullGetSpecificException(String test) {
+
+        AtomicReference<String> containNull = new AtomicReference<>();
+        if(StringUtils.isEmpty(test))
+            return STRING_REQUIRED;
+
+        Arrays.stream(test.split(",")).forEach(i->
+        {
+            try {
+                System.out.println(String.format("Iterating over value %",i.toString()));
+            }catch (Exception e){
+                containNull.set(e.getClass().getName());
+            }
+        });
+        return StringUtils.isEmpty(containNull.get())
+                ?"There is not exception to show":String.format("The current exceptoion is: %s",containNull.get());
+    }
+
 
         private String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD)
