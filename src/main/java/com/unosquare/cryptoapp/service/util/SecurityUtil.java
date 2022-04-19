@@ -1,4 +1,4 @@
-package com.unosquare.registration.service.util;
+package com.unosquare.cryptoapp.service.util;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;

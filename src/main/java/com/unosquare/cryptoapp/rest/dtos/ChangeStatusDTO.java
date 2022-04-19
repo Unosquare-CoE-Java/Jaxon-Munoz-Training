@@ -1,4 +1,4 @@
-package com.unosquare.registration.rest.dtos;
+package com.unosquare.cryptoapp.rest.dtos;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

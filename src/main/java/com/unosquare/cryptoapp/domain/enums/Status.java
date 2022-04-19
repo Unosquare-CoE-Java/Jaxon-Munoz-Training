@@ -1,4 +1,4 @@
-package com.unosquare.registration.domain.enums;
+package com.unosquare.cryptoapp.domain.enums;
 
 public enum Status {
     PENDING,

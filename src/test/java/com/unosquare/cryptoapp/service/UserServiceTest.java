@@ -1,8 +1,8 @@
-package com.unosquare.registration.service;
+package com.unosquare.cryptoapp.service;
 
-import com.unosquare.registration.domain.User;
-import com.unosquare.registration.repository.UserRepository;
-import com.unosquare.registration.rest.dtos.ResponseDTO;
+import com.unosquare.cryptoapp.domain.User;
+import com.unosquare.cryptoapp.repository.UserRepository;
+import com.unosquare.cryptoapp.rest.dtos.ResponseDTO;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;

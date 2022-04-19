@@ -1,4 +1,4 @@
-package com.unosquare.registration.domain;
+package com.unosquare.cryptoapp.domain;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

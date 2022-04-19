@@ -1,11 +1,11 @@
-package com.unosquare.registration.service;
+package com.unosquare.cryptoapp.service;
 
-import com.unosquare.registration.domain.User;
-import com.unosquare.registration.domain.enums.Status;
-import com.unosquare.registration.repository.UserRepository;
-import com.unosquare.registration.rest.dtos.ResponseDTO;
-import com.unosquare.registration.service.util.SecurityUtil;
-import com.unosquare.registration.service.util.UserValidator;
+import com.unosquare.cryptoapp.domain.User;
+import com.unosquare.cryptoapp.domain.enums.Status;
+import com.unosquare.cryptoapp.repository.UserRepository;
+import com.unosquare.cryptoapp.rest.dtos.ResponseDTO;
+import com.unosquare.cryptoapp.service.util.SecurityUtil;
+import com.unosquare.cryptoapp.service.util.UserValidator;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

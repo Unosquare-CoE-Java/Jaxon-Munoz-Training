@@ -1,7 +1,7 @@
 package com.unosquare.dailychallenge.rest;
 
 import com.unosquare.dailychallenge.service.DailyChallengeService;
-import com.unosquare.registration.rest.dtos.ResponseDTO;
+import com.unosquare.cryptoapp.rest.dtos.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
