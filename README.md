@@ -54,17 +54,20 @@ Here some tutorials:
 1. https://mkyong.com/docker/docker-spring-boot-examples/
 2. https://www.baeldung.com/dockerizing-spring-boot-application
 
+
 ### Testing the application
 
-You can see all the services exposed in the Swagger documentation: [Local documentation](http://localhost:8080/swagger-ui.html#/user-resource)
+You can see all the services exposed in the [swagger documentation](http://localhost:8080/swagger-ui.html#/user-resource)
 
 ![image](https://user-images.githubusercontent.com/16148737/164075480-2d4f72c3-91be-4340-b4eb-c49f3775a389.png)
 
-You can use [postman](https://www.postman.com/downloads/) and try a get request: http://localhost:8080/user/registration/getUserByEmail/jaxonma@gmail.com
+You can use [postman](https://www.postman.com/downloads/) and try a get request like this [local service](http://localhost:8080/user/registration/getUserByEmail/jaxonma@gmail.com) 
 
 ![image](https://user-images.githubusercontent.com/16148737/164063970-fe256b3b-ec96-47a3-9b4c-ff9cf276c374.png)
 
+
 ### Do you want to try it over AWS?
+
 Here some tutorials:
 1. https://blog.clairvoyantsoft.com/deploy-and-run-docker-images-on-aws-ecs-85a17a073281
 2. https://medium.com/@chandupriya93/deploying-docker-containers-with-aws-ec2-instance-265038bba674
