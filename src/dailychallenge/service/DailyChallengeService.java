@@ -1,4 +1,4 @@
-package com.unosquare.dailychallenge.service;
+package dailychallenge.service;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -42,8 +42,7 @@ public class DailyChallengeService {
             return "The given string is not a palindrome";
     }
 
-    /** Finding the longest common prefix: Write a program that finds the longest common prefix of given strings.*/
-    /**
+    /** Finding the longest common prefix: Write a program that finds the longest common prefix of given strings.
      * This is a personal implementation cause we can use apache commons: StringUtils.getCommonPrefix(test.split(","));
      */
     public String getCommonPrefix(String test) {
@@ -150,8 +149,30 @@ public class DailyChallengeService {
                 ?"There is not exception to show":String.format("The current exceptoion is: %s",containNull.get());
     }
 
+    /**
+     * Checking null references and returning non-null default references:
+     * Write a program that performs the null checks on the given reference,
+     * and if it is non-null, then return it; otherwise, return a non-null default reference.
+     */
+    public String nullCheckAndReturnValueOrDefault(List<String> test, String defaultValue){
+        return StringUtils.join(
+                    test.stream()
+                        .map(i -> Objects.isNull(i) ? defaultValue : i)
+                        .collect(Collectors.toList()),",");
+    }
 
-        private String unaccent(String src) {
+    /**
+     * equals() and hashCode(): Explain and exemplify how equals() and hashCode() methods work in Java.
+     */
+    public String equalsAndHashcodeDifference(String a, String b) {
+
+        if(StringUtils.isEmpty(a)||StringUtils.isEmpty(b))
+            return STRING_REQUIRED;
+
+        return String.format("a & b are %s equal and their respective hashCodes are %s and %s",a.equals(b)?"":"un -",a.hashCode(),b.hashCode());
+    }
+
+    private String unaccent(String src) {
         return Normalizer.normalize(src, Normalizer.Form.NFD)
                          .replaceAll("[^\\p{ASCII}]", "");
     }
