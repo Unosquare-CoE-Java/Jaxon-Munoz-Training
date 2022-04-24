@@ -1,5 +1,8 @@
 package dailychallenge.service;
 
+/**
+ *  Writing an immutable class: Write a program that represents an immutable class.
+ */
 final class InmutableClassChallenge1Week3 {
 
     private String attribute;
