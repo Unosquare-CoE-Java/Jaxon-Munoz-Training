@@ -68,6 +68,11 @@
             <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- New persistence SQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
