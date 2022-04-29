@@ -4,7 +4,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.Email;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -33,7 +32,6 @@ public class User implements Serializable {
 
     private String country;
 
-    @Email
     private String email;
 
     private String password;
