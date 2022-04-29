@@ -1,4 +1,4 @@
-package dailychallenge.rest;
+package rest;
 
 import dailychallenge.service.DailyChallengeService;
 import com.unosquare.userregistration.rest.dtos.ResponseDTO;

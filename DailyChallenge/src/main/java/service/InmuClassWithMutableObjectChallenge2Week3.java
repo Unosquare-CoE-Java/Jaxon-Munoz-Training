@@ -1,4 +1,4 @@
-package dailychallenge.service;
+package service;
 
 import lombok.Getter;
 import lombok.Setter;

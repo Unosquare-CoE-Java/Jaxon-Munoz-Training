@@ -1,4 +1,4 @@
-package dailychallenge.service;
+package service;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;

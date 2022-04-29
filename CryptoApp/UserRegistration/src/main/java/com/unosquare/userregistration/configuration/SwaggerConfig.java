@@ -20,7 +20,7 @@ public class SwaggerConfig {
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.unosquare.cryptoapp.rest"))
+                .apis(RequestHandlerSelectors.basePackage("com.unosquare.userregistration.rest"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo())
@@ -29,7 +29,7 @@ public class SwaggerConfig {
 
     private ApiInfo getApiInfo() {
         return new ApiInfo(
-                "User Registration Service - Crypto App",
+                "User Registration - Crypto App",
                 "User registration service is a personal project to use a lot of technologies that includes Java 11, Maven, Docker, MongoDB, Junit, Spring and more",
                 "1.0",
                 "",
