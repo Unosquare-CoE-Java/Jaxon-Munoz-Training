@@ -54,8 +54,13 @@ public class DailyChallenge {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.checkinNullPointer(test)),HttpStatus.OK);
     }
 
-    @GetMapping("7/{test}")
+    @GetMapping("8/{test}")
     public ResponseEntity<ResponseDTO<String>> getCurrentException(@PathVariable("test") @Valid final String test) {
         return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.checkinNullGetSpecificException(test)),HttpStatus.OK);
+    }
+
+    @GetMapping("9/{test}")
+    public ResponseEntity<ResponseDTO<String>> getBadData(@PathVariable("test") @Valid final String test) {
+        return new ResponseEntity<>(new ResponseDTO<>(Boolean.TRUE,dailyChallengeService.avoidingBadDataInmObjs(test)),HttpStatus.OK);
     }
 }

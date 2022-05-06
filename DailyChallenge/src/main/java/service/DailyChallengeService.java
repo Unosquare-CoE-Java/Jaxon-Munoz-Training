@@ -1,5 +1,9 @@
 package service;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+import domain.Currency;
+import domain.Money;
+import domain.enums.AvailableCurrency;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -170,6 +174,34 @@ public class DailyChallengeService {
             return STRING_REQUIRED;
 
         return String.format("a & b are %s equal and their respective hashCodes are %s and %s",a.equals(b)?"":"un -",a.hashCode(),b.hashCode());
+    }
+
+    /**
+     * Avoiding bad data in immutable objects: Write a program that prevents bad data in immutable objects.
+     */
+    public String avoidingBadDataInmObjs(String... input){
+        List<Money> myMoney = new ArrayList<>();
+        List<String> errorItems = new ArrayList<>();
+        Arrays.stream(input).distinct().forEach(i->{
+            if(Arrays.stream(AvailableCurrency.values()).noneMatch(e-> e.name().equalsIgnoreCase(i))){
+                errorItems.add(i);
+            }else{
+                myMoney.add(new Money(0D,new Currency(getEnumFromString(AvailableCurrency.class, i.toUpperCase()))));
+            }
+        });
+
+        return String.format("The bad data is %s",StringUtils.join(errorItems,","));
+    }
+
+    public static <T extends Enum<T>> T getEnumFromString(Class<T> c, String string) {
+        if( c != null && string != null ) {
+            try {
+                return Enum.valueOf(c, string.trim().toUpperCase());
+            } catch(IllegalArgumentException ex) {
+                System.out.println(String.format("Oops string %s doesn't exist",string));
+            }
+        }
+        return null;
     }
 
     private String unaccent(String src) {
